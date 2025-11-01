@@ -57,7 +57,7 @@ ln -s $(pwd)/.vimrc ~/.vimrc
 ln -s $(pwd)/.poshthemes ~/.poshthemes
 
 # Copy htop config and motd banner
-cp -f $(pwd)/.config ~/
+cp -fr $(pwd)/.config ~/
 sudo cp $(pwd)/banner/01-motd-banner /etc/update-motd.d/01-motd-banner
 sudo cp $(pwd)/banner/motd-dontpush /etc/motd-dontpush
 
