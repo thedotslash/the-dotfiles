@@ -65,7 +65,7 @@ for banner in $(ls /etc/update-motd.d/|grep -v header); do sudo chmod -x /etc/up
 
 # Copy motd banner
 sudo cp $(pwd)/banner/01-motd-banner /etc/update-motd.d/01-motd-banner
-sudo cp $(pwd)/banner/motd-dontpush /etc/motd-dontpush
+sudo cp $(pwd)/banner/{motd-dontpush,motd-horse} /etc/
 
 # Append .bashrc configuration
 cat $(pwd)/.bashrc >> ~/.bashrc

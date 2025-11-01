@@ -1,4 +1,26 @@
-#!/bin/sh
+#!/bin/bash
+
+CURRENT_TTY=$(tty)
+
+case "$CURRENT_TTY" in
+    /dev/tty[0-9]*)
+        SESSION_TYPE="LOCAL_CONSOLE"
+        ;;
+
+    *)
+        ;;
+esac
+
+# --- MOTD ---
+if [ "$SESSION_TYPE" = "LOCAL_CONSOLE" ]; then
+    cat /etc/motd-horse
+else
+    cat /etc/motd-dontpush
+fi
+
 echo ""
-cat /etc/motd-dontpush
-echo ""
+
+# Clear temporary variables
+unset CURRENT_TTY
+unset SESSION_TYPE
+unset SESSION_INFO
