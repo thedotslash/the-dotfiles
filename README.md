@@ -54,6 +54,7 @@ Please note that `.ssh/authorized_keys` shouldn't be added to your system becaus
 # Symlink configuration
 ln -sf $(pwd)/.ssh/authorized_keys ~/.ssh/authorized_keys
 ln -s $(pwd)/.vimrc ~/.vimrc
+ln -s $(pwd)/.inputrc ~/.inputrc
 ln -s $(pwd)/.poshthemes ~/.poshthemes
 
 # Copy htop config and motd banner
