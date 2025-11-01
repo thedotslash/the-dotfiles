@@ -55,6 +55,7 @@ Please note that `.ssh/authorized_keys` shouldn't be added to your system becaus
 ln -sf $(pwd)/.ssh/authorized_keys ~/.ssh/authorized_keys
 ln -s $(pwd)/.vimrc ~/.vimrc
 ln -s $(pwd)/.poshthemes ~/.poshthemes
+ln -s $(pwd)/.config/htop/htoprc ~/.config/htop/htoprc
 
 # Copy motd banner
 sudo cp $(pwd)/banner/01-motd-banner /etc/update-motd.d/01-motd-banner
