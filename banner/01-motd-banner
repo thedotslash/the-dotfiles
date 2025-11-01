@@ -12,6 +12,8 @@ case "$CURRENT_TTY" in
 esac
 
 # --- MOTD ---
+echo ""
+
 if [ "$SESSION_TYPE" = "LOCAL_CONSOLE" ]; then
     cat /etc/motd-horse
 else
