@@ -1,3 +1,4 @@
+
 # Enable date & time history output
 HISTTIMEFORMAT="%d-%m-%Y %H:%M:%S "
 
