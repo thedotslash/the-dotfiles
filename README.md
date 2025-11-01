@@ -21,8 +21,14 @@ sudo chmod +x /usr/local/bin/oh-my-posh
 
 #### htop
 
+Installed htop from package manager often out of date and the dotfiles not properly working. Because of that just uninstall and install this version instead.
+
+Note: you need `jq` installed on your system before run this command!
+
 ```sh
-wget $(curl -s https://api.github.com/repos/thedotslah/ci-build/releases/latest | jq -r '.assets[] | select(.name | contains ("tar.gz")) | .browser_download_url' | head -n 1) --no-check-certificate -O htop-latest.tar.gz
+wget $(curl -s https://api.github.com/repos/thedotslash/ci-build/releases/latest | jq -r '.assets[] | select(.name | contains ("tar.gz")) | .browser_download_url' | head -n 1) --no-check-certificate -O /tmp/htop-latest.tar.gz
+sudo tar xvf /tmp/htop-latest.tar.gz /usr/local/bin
+sudo chmod +x /usr/local/bin/htop
 ```
 
 ### Configure dotfiles
