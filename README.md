@@ -111,4 +111,11 @@ source ~/.bashrc
 
 ### Preview
 
-Soon!
+#### Login Banner
+
+<img width="1907" height="998" alt="image" src="https://github.com/user-attachments/assets/431d4197-5a98-4d62-a83c-88a2fc97497b" />
+
+#### Htop
+
+<img width="1873" height="1049" alt="image" src="https://github.com/user-attachments/assets/4e11227a-01f5-46a2-8b87-4f4cd5608d68" />
+
