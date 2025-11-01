@@ -57,8 +57,13 @@ ln -s $(pwd)/.vimrc ~/.vimrc
 ln -s $(pwd)/.inputrc ~/.inputrc
 ln -s $(pwd)/.poshthemes ~/.poshthemes
 
-# Copy htop config and motd banner
+# Copy htop config
 cp -fr $(pwd)/.config ~/
+
+# Disable all motd except from header
+for banner in $(ls /etc/update-motd.d/|grep -v header); do sudo chmod -x /etc/update-motd.d/$banner; done
+
+# Copy motd banner
 sudo cp $(pwd)/banner/01-motd-banner /etc/update-motd.d/01-motd-banner
 sudo cp $(pwd)/banner/motd-dontpush /etc/motd-dontpush
 
