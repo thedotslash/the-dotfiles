@@ -1,0 +1,85 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+blocks:
+- type: prompt
+  alignment: left
+  segments:
+  - properties:
+      cache_duration: none
+    template: "@{{ .UserName }} "
+    foreground: "#9e7eff"
+    type: session
+    style: plain
+  - properties:
+      cache_duration: none
+    #template: <i>in</i>
+    template: in
+    foreground: "#9fca56"
+    type: session
+    style: plain
+  - properties:
+      cache_duration: none
+    #template: " <i>{{ .HostName }}</i> "
+    template: " <b>{{ .HostName }}</b> "
+    foreground: "#56B6C2"
+    type: session
+    style: plain
+  - properties:
+      cache_duration: none
+    template: 󰲐
+    foreground: "#9fca56"
+    type: session
+    style: plain
+  - properties:
+      shell: bash
+      #command: "ifconfig | grep 'inet addr' | cut -d: -f2 | awk '{print $1}'| grep -v '127.0.0.1' | head -1"
+      command: ip -4 addr show scope global | grep -v ' lo' | awk '/inet / {split($2,a,"/"); print a[1]; exit}'
+    template: " {{ .Output }} "
+    foreground: "#56B6C2"
+    type: command
+    style: plain
+  - properties:
+      cache_duration: none
+    template: ==>
+    foreground: "#9fca56"
+    type: session
+    style: plain
+  - properties:
+      cache_duration: none
+      home_icon: 󰜥
+      style: agnoster_short
+    #template: " <i>{{ .Path }}</i> "
+    template: " <b>{{ .Path }}</b> "
+    foreground: "#9e7eff"
+    type: path
+    style: plain
+  - properties:
+      cache_duration: none
+    template: "(ﳑ{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }}) "
+    foreground: "#7FD5EA"
+    type: go
+    style: powerline
+  - properties:
+      cache_duration: none
+    template: ( {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }})
+    foreground: "#9e7eff"
+    type: python
+    style: powerline
+  - properties:
+      branch_icon: ""
+      cache_duration: none
+    template: "<#E8CC97>git(</>{{ .HEAD }}<#E8CC97>) </>"
+    foreground: "#56B6C2"
+    type: git
+    style: plain
+  - properties:
+      always_enabled: false
+      cache_duration: none
+      style: austin
+      threshold: 100
+    template: "{{ .FormattedMs }}"
+    foreground: "#FFAB91"
+    type: executiontime
+    style: powerline
+version: 3
+final_space: true

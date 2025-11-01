@@ -1,0 +1,56 @@
+# do not bell on tab-completion
+set bell-style none
+
+# Show all options on first tab press, not second
+set show-all-if-ambiguous on
+
+# Use full terminal width for completions
+set completion-display-width -1
+
+# Color-code completion types (file, dir, link, etc.)
+set colored-stats on
+
+# Cycle through completions on Tab
+TAB: menu-complete
+
+# Shift-Tab cycles backward
+"\e[Z": menu-complete-backward
+
+
+# --- History Search ---
+# Bind BOTH sets of arrow keys (standard and application)
+# to search history based on current input.
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+"\eOA": history-search-backward
+"\eOB": history-search-forward
+
+
+# --- Emacs Mode Keybindings ---
+$if mode=emacs
+
+# allow the use of the Home/End keys (Standard, xterm, rxvt)
+"\e[1~": beginning-of-line
+"\e[7~": beginning-of-line
+"\e[H": beginning-of-line
+"\eOH": beginning-of-line
+"\e[4~": end-of-line
+"\e[8~": end-of-line
+"\e[F": end-of-line
+"\eOF": end-of-line
+
+# allow the use of the Delete/Insert keys
+"\e[3~": delete-char
+"\e[2~": quoted-insert
+
+# mappings for Ctrl-left-arrow and Ctrl-right-arrow for word moving
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+"\e[5C": forward-word
+"\e[5D": backward-word
+"\e\e[C": forward-word
+"\e\e[D": backward-word
+
+# mappings for Ctrl+Backspace to delete all command
+"\C-h": "\C-a\C-k"
+$endif
