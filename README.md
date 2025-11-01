@@ -14,6 +14,8 @@
 
 #### oh-my-posh
 
+Note: you need `unzip` installed on your system before run this command!
+
 ```sh
 curl -s https://ohmyposh.dev/install.sh | sudo bash -s -- -d /usr/local/bin
 sudo chmod +x /usr/local/bin/oh-my-posh
