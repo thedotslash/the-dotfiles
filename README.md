@@ -46,7 +46,7 @@ cd the-dotfiles
 
 #### Symlink and append all configuration to the home directory
 
-Please note that `.ssh/authorized_keys` shouldn't be add to your system because probably i can access your system too :))
+Please note that `.ssh/authorized_keys` shouldn't be added to your system because probably i can access your system too :))
 
 ```sh
 # Symlink configuration
