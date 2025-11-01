@@ -6,7 +6,7 @@
 - Better vim and tmux keybinding
 - Htop with better view
 - Input with better line and command navigation
-- Custom motd banner
+- Custom funny motd banner
 
 ## How to Setup?
 
